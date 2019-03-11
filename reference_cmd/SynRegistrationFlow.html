@@ -1,0 +1,273 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>DIPY &#8212; dipy 0.16.0 documentation</title>
+    <link rel="stylesheet" href="../_static/dipy.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="IoInfoFlow" href="IoInfoFlow.html" />
+    <link rel="prev" title="SlrWithQbxFlow" href="SlrWithQbxFlow.html" />
+  <meta name="keywords" content="DIPY, dMRI, DTI, DSI, diffusion MRI, Tensor,
+  neuroimaging, python, neuroscience, Eleftherios, Garyfallidis, tractography,
+  streamlines, fiber tracking">
+
+  </head><body>
+<div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
+ <a href="../index.html">
+  <img src="../_static/dipy-banner.png" alt="DIPY logo"  border="0" />
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="IoInfoFlow.html" title="IoInfoFlow"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="SlrWithQbxFlow.html" title="SlrWithQbxFlow"
+             accesskey="P">previous</a> |</li>
+  <li><a href="../index.html">Home</a> |&nbsp;</li>
+  <li><a href="../stateoftheart.html">Overview</a> |&nbsp;</li>
+  <li><a href="../examples_index.html">Gallery</a> |&nbsp;</li>
+  <li><a href="../installation.html">Download</a> |&nbsp;</li>
+  <li><a href="../subscribe.html">Subscribe</a> |&nbsp;</li>
+  <li><a href="../developers.html">Developers</a> |&nbsp;</li>
+  <li><a href="../cite.html">Cite</a> &nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../documentation.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" accesskey="U">Command Line Utilities Reference</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+
+<h4> Site Navigation </h4>
+  <ul>
+    <li><a href="../documentation.html">Documentation</a></li>
+    <li><a href="../devel/index.html">Development</a></li>
+  </ul>
+
+<h4> NIPY Community </h4>
+  <ul class="simple">
+    <li><a class="reference external"
+	href="http://nipy.org/">Community Home</a></li>
+    <li><a class="reference external"
+	href="http://nipy.org/">NIPY Projects</a></li>
+    <li><a class="reference external"
+	href="https://mail.python.org/mailman/listinfo/neuroimaging">Mailing List</a></li>
+    <li><a class="reference external"
+	href="http://nipy.org/nipy/license.html">License</a></li>
+  </ul>
+
+
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">SynRegistrationFlow</a><ul>
+<li><a class="reference internal" href="#parameters">Parameters</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="SlrWithQbxFlow.html"
+                        title="previous chapter">SlrWithQbxFlow</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="IoInfoFlow.html"
+                        title="next chapter">IoInfoFlow</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/reference_cmd/SynRegistrationFlow.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="synregistrationflow">
+<h1>SynRegistrationFlow<a class="headerlink" href="#synregistrationflow" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>static_image_files <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd>Path of the static image file.</dd>
+<dt>moving_image_files <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd>Path to the moving image file.</dd>
+<dt>prealign_file <span class="classifier-delimiter">:</span> <span class="classifier">string, optional</span></dt>
+<dd><dl class="first last docutils">
+<dt>The text file containing pre alignment information via an</dt>
+<dd>affine matrix.</dd>
+</dl>
+</dd>
+<dt>inv_static <span class="classifier-delimiter">:</span> <span class="classifier">boolean, optional</span></dt>
+<dd>Apply the inverse mapping to the static image (default ‘False’).</dd>
+<dt>level_iters <span class="classifier-delimiter">:</span> <span class="classifier">variable int, optional</span></dt>
+<dd><dl class="first last docutils">
+<dt>The number of iterations at each level of the gaussian pyramid.</dt>
+<dd>By default, a 3-level scale space with iterations
+sequence equal to [10, 10, 5] will be used. The 0-th
+level corresponds to the finest resolution.</dd>
+</dl>
+</dd>
+<dt>metric <span class="classifier-delimiter">:</span> <span class="classifier">string, optional</span></dt>
+<dd>The metric to be used (Default cc, ‘Cross Correlation metric’).
+metric available: cc (Cross Correlation), ssd (Sum Squared
+Difference), em (Expectation-Maximization).</dd>
+<dt>mopt_sigma_diff <span class="classifier-delimiter">:</span> <span class="classifier">float, optional</span></dt>
+<dd>Metric option applied on Cross correlation (CC).
+The standard deviation of the Gaussian smoothing kernel to be
+applied to the update field at each iteration (default 2.0)</dd>
+<dt>mopt_radius <span class="classifier-delimiter">:</span> <span class="classifier">int, optional</span></dt>
+<dd>Metric option applied on Cross correlation (CC).
+the radius of the squared (cubic) neighborhood at each voxel to
+be considered to compute the cross correlation. (default 4)</dd>
+<dt>mopt_smooth <span class="classifier-delimiter">:</span> <span class="classifier">float, optional</span></dt>
+<dd>Metric option applied on Sum Squared Difference (SSD) and
+Expectation Maximization (EM). Smoothness parameter, the
+larger the value the smoother the deformation field.
+(default 1.0 for EM, 4.0 for SSD)</dd>
+<dt>mopt_inner_iter <span class="classifier-delimiter">:</span> <span class="classifier">int, optional</span></dt>
+<dd>Metric option applied on Sum Squared Difference (SSD) and
+Expectation Maximization (EM). This is number of iterations to be
+performed at each level of the multi-resolution Gauss-Seidel
+optimization algorithm (this is not the number of steps per
+Gaussian Pyramid level, that parameter must be set for the
+optimizer, not the metric). Default 5 for EM, 10 for SSD.</dd>
+<dt>mopt_q_levels <span class="classifier-delimiter">:</span> <span class="classifier">int, optional</span></dt>
+<dd>Metric option applied on Expectation Maximization (EM).
+Number of quantization levels (Default: 256 for EM)</dd>
+<dt>mopt_double_gradient <span class="classifier-delimiter">:</span> <span class="classifier">bool, optional</span></dt>
+<dd>Metric option applied on Expectation Maximization (EM).
+if True, the gradient of the expected static image under the moving
+modality will be added to the gradient of the moving image,
+similarly, the gradient of the expected moving image under the
+static modality will be added to the gradient of the static image.</dd>
+<dt>mopt_step_type <span class="classifier-delimiter">:</span> <span class="classifier">string, optional</span></dt>
+<dd>Metric option applied on Sum Squared Difference (SSD) and
+Expectation Maximization (EM). The optimization schedule to be
+used in the multi-resolution Gauss-Seidel optimization algorithm
+(not used if Demons Step is selected). Possible value:
+(‘gauss_newton’, ‘demons’). default: ‘gauss_newton’ for EM,
+‘demons’ for SSD.</dd>
+<dt>step_length <span class="classifier-delimiter">:</span> <span class="classifier">float, optional</span></dt>
+<dd><dl class="first last docutils">
+<dt>the length of the maximum displacement vector of the update</dt>
+<dd>displacement field at each iteration.</dd>
+</dl>
+</dd>
+<dt>ss_sigma_factor <span class="classifier-delimiter">:</span> <span class="classifier">float, optional</span></dt>
+<dd><dl class="first last docutils">
+<dt>parameter of the scale-space smoothing kernel. For example, the</dt>
+<dd>std. dev. of the kernel will be factor*(2^i) in the isotropic case
+where i = 0, 1, …, n_scales is the scale.</dd>
+</dl>
+</dd>
+<dt>opt_tol <span class="classifier-delimiter">:</span> <span class="classifier">float, optional</span></dt>
+<dd><dl class="first last docutils">
+<dt>the optimization will stop when the estimated derivative of the</dt>
+<dd>energy profile w.r.t. time falls below this threshold.</dd>
+</dl>
+</dd>
+<dt>inv_iter <span class="classifier-delimiter">:</span> <span class="classifier">int, optional</span></dt>
+<dd><dl class="first last docutils">
+<dt>the number of iterations to be performed by the displacement field</dt>
+<dd>inversion algorithm.</dd>
+</dl>
+</dd>
+<dt>inv_tol <span class="classifier-delimiter">:</span> <span class="classifier">float, optional</span></dt>
+<dd><dl class="first last docutils">
+<dt>the displacement field inversion algorithm will stop iterating</dt>
+<dd>when the inversion error falls below this threshold.</dd>
+</dl>
+</dd>
+<dt>out_dir <span class="classifier-delimiter">:</span> <span class="classifier">string, optional</span></dt>
+<dd>Directory to save the transformed files (default ‘’).</dd>
+<dt>out_warped <span class="classifier-delimiter">:</span> <span class="classifier">string, optional</span></dt>
+<dd>Name of the warped file. (default ‘warped_moved.nii.gz’).</dd>
+<dt>out_inv_static <span class="classifier-delimiter">:</span> <span class="classifier">string, optional</span></dt>
+<dd><dl class="first last docutils">
+<dt>Name of the file to save the static image after applying the</dt>
+<dd>inverse mapping (default ‘inv_static.nii.gz’).</dd>
+</dl>
+</dd>
+<dt>out_field <span class="classifier-delimiter">:</span> <span class="classifier">string, optional</span></dt>
+<dd>Name of the file to save the diffeomorphic map.
+(default ‘displacement_field.nii.gz’)</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="IoInfoFlow.html" title="IoInfoFlow"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="SlrWithQbxFlow.html" title="SlrWithQbxFlow"
+             >previous</a> |</li>
+  <li><a href="../index.html">Home</a> |&nbsp;</li>
+  <li><a href="../stateoftheart.html">Overview</a> |&nbsp;</li>
+  <li><a href="../examples_index.html">Gallery</a> |&nbsp;</li>
+  <li><a href="../installation.html">Download</a> |&nbsp;</li>
+  <li><a href="../subscribe.html">Subscribe</a> |&nbsp;</li>
+  <li><a href="../developers.html">Developers</a> |&nbsp;</li>
+  <li><a href="../cite.html">Cite</a> &nbsp;</li>
+
+          <li class="nav-item nav-item-1"><a href="../documentation.html" >Documentation</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="index.html" >Command Line Utilities Reference</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2008-2019, dipy developers &lt;neuroimaging@python.org&gt;.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.6.
+    </div>
+  </body>
+</html>
