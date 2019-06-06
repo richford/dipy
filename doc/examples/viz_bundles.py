@@ -78,8 +78,8 @@ focal point and view up vectors of the camera.
 renderer.camera_info()
 
 """
-Show every point with a value from a volume with default colormap
-=================================================================
+Show every point with a value from a volume with default colormap and add axes
+==============================================================================
 
 Here we will need to input the ``fa`` map in ``streamtube`` or ``line``.
 """
@@ -88,13 +88,24 @@ renderer.clear()
 stream_actor2 = actor.line(bundle_native, fa, linewidth=0.1)
 
 """
-We can also show the scalar bar.
+We can also show the scalar bar or add axes to show the bundle orientation.
 """
 
 bar = actor.scalar_bar()
 
 renderer.add(stream_actor2)
 renderer.add(bar)
+
+# Add axes to the lower left. Use `s` to adjust the size.
+s = 20
+axes = actor.axes(scale=(s, s, s))
+# Set the position relative to the streamlines
+axes.SetPosition((
+    np.mean(stream_actor2.GetXRange()),
+    np.max(stream_actor2.GetYRange()) - s,
+    np.min(stream_actor2.GetZRange()) - s,
+))
+renderer.add(axes)
 
 # window.show(renderer, size=(600, 600), reset_camera=False)
 window.record(renderer, out_path='bundle2.png', size=(600, 600))
