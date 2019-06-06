@@ -51,6 +51,10 @@ This is the default option when you are using ``line`` or ``streamtube``.
 
 renderer = window.Renderer()
 
+# Uncomment the next line of code to change the window background to
+# white (e.g. for use in manuscripts or posters)
+# renderer.background((1, 1, 1))
+
 stream_actor = actor.line(bundle_native)
 
 renderer.set_camera(position=(-176.42, 118.52, 128.20),
